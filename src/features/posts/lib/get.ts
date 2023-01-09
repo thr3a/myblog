@@ -33,6 +33,6 @@ export const getAllPostMetadata = (): PostMetaProps[] => {
       date: (data.Date).toISOString() || null,
       url: data.URL
     };
-  });
+  }).reverse();
 };
 

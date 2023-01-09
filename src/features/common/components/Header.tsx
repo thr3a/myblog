@@ -1,7 +1,11 @@
+import { Title, Anchor } from '@mantine/core';
 export const Header = () => {
   return (
     <>
-      <h1>Create Next App</h1>
+      <Title order={1}>
+        <Anchor href={'/'}>動かざることバグの如し</Anchor>
+      </Title>
+      <h1></h1>
     </>
   );
 };

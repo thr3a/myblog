@@ -20,5 +20,5 @@ export const getPostData = (id: string): PostProps => {
 
 export const artcleUrl = (x: PostMetaProps): string => {
   const array = x.url.split('/');
-  return [array[3], array[4], array[5]].join('/');
+  return '/' + [array[3], array[4], array[5]].join('/');
 };
