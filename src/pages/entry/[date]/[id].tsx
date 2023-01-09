@@ -20,7 +20,6 @@ const PostPage: NextPage<Props> = ({postData}) => {
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getAllPostIds();
-  console.log(paths);
   return {
     paths,
     fallback: false

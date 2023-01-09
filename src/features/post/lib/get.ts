@@ -1,6 +1,5 @@
 import path from 'path';
 import { readFileSync } from 'fs';
-import glob from "fast-glob";
 import matter from 'gray-matter';
 import type { PostProps, PostMetaProps } from '@/features/post/type';
 
@@ -13,18 +12,13 @@ export const getPostData = (id: string): PostProps => {
   return {
     id,
     title,
-    date: date.toString(),
-    content
+    date: (data.Date).toISOString() || null,
+    content,
+    url: data.URL
   };
 };
 
-// export const getAllPostInfos = async () => {
-//   const fileNames = glob.sync('contents/posts/**/*.md');
-//   return fileNames.map(fileName => {
-//     const fileContent = readFileSync(fileName, 'utf8');
-//     const {data: PostMetaProps[] } = matter(fileContent);
-//     return {
-//       ...(data as PostMetaProps)
-//     };
-//   });
-// };
+export const artcleUrl = (x: PostMetaProps): string => {
+  const array = x.url.split('/');
+  return [array[3], array[4], array[5]].join('/');
+};
